@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="36d3f939-7b60-40fd-bd97-0f7a6319658d" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="sample-hello-messageFlow" doc:id="4caaef4a-7ba3-467a-9063-3d4b21c99b20" >
+		<http:listener doc:name="Listener" doc:id="33172791-3be7-4a57-83e6-a1a4b7cc39c1" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<logger level="INFO" doc:name="Logger" doc:id="6039680f-e560-43a1-aec6-d4eee30d57ef" message="Flow started @@@@@@@@"/>
+		<set-payload value='#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;    "message": "Wlecome to CI/CD Automation"&#10;}]' doc:name="Set Payload" doc:id="3cbace17-672d-4a69-84b4-73ff440e8f3b" />
+		<logger level="INFO" doc:name="Logger" doc:id="0c57aa0c-fe15-4284-a030-629e41ade556" message="flow END @@@@@@@@@@"/>
+	</flow>
+</mule>
