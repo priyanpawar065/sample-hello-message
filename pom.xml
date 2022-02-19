@@ -31,7 +31,8 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-
+          
+          		  <!--  
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${app.runtime}</muleVersion>
@@ -42,9 +43,14 @@
 						<workerType>${type}</workerType>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>
-
 						</properties>
 					</cloudHubDeployment>
+					-->
+					
+					<standaloneDeployment>
+                            <muleHome>Applications/apache-maven-3.8.1</muleHome>
+                            <muleVersion>4.3.0</muleVersion>
+                      </standaloneDeployment>
 
 				</configuration>
 			</plugin>
