@@ -39,7 +39,7 @@
 						<password>${password}</password>
 						<applicationName>${applicationName}</applicationName>
 						<environment>${env}</environment>
-						<workerType>MICRO</workerType>
+						<workerType>${type}</workerType>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>
 
